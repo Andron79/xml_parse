@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fcsNotificationEF xmlns="http://zakupki.gov.ru/oos/integration/1" xmlns:ns2="http://zakupki.gov.ru/oos/types/1" xmlns:ns3="http://zakupki.gov.ru/oos/printform/1" xmlns:ns4="http://zakupki.gov.ru/oos/base/1" xmlns:ns5="http://zakupki.gov.ru/oos/EPtypes/1" xmlns:ns6="http://zakupki.gov.ru/oos/common/1" xmlns:ns7="http://zakupki.gov.ru/oos/pprf615types/1" xmlns:ns8="http://zakupki.gov.ru/oos/CPtypes/1">
+   <index>
+      <id>8103f60e-0020-7777-af77-d9by5a511969</id>
+      <sender>OOC</sender>
+      <receiver>ETP_GPB</receiver>
+      <createDateTime>2019-07-11T14:46:00.613</createDateTime>
+      <objectType>EF</objectType>
+      <objectId>0000100006960011179</objectId>
+      <indexNum>1</indexNum>
+      <signature type="CAdES-BES" />
+      <mode>TEST</mode>
+   </index>
+   <data schemeVersion="9.0">
+      <ns2:id>56187</ns2:id>
+      <ns2:purchaseNumber>0000100006960011179</ns2:purchaseNumber>
+      <ns2:docPublishDate>2020-07-11T14:25:00.952+03:00</ns2:docPublishDate>
+      <ns2:href>ССЫЛКА В EIS5</ns2:href>
+      <ns2:printForm>
+         <ns2:url>http://eis5.roskazna.ru/epz/order/notice/printForm/viewXml.html?noticeId=56187</ns2:url>
+         <ns2:signature type="CAdES-BES">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</ns2:signature>
+      </ns2:printForm>
+      <ns2:purchaseObjectInfo>Приобретение специальной обуви для подразделений охраны</ns2:purchaseObjectInfo>
+    <ns2:purchaseResponsible>
+      <ns2:responsibleOrg>
+         <ns2:regNum>10022018223</ns2:regNum>
+         <ns2:fullName>Общество с ограниченной ответственностью "Оружейная палата"</ns2:fullName>
+         <ns2:postAddress>
+Российская Федерация, 119270, Москва, ПР МУРМАНСКИЙ, 14
+</ns2:postAddress>
+         <ns2:factAddress>
+
+</ns2:factAddress>
+         <ns2:INN>4743324475</ns2:INN>
+         <ns2:KPP>331845159</ns2:KPP>
+      </ns2:responsibleOrg>
+      <ns2:responsibleRole>CU</ns2:responsibleRole>
+      <ns2:responsibleInfo>
+         <ns2:orgPostAddress>
+Российская Федерация, 119270, Москва, ПР МУРМАНСКИЙ, 14
+</ns2:orgPostAddress>
+         <ns2:orgFactAddress>
+
+</ns2:orgFactAddress>
+             <ns2:contactPerson>
+               <ns2:lastName>Иван</ns2:lastName>
+               <ns2:firstName>Андреев</ns2:firstName>
+               <ns2:middleName>Александрович</ns2:middleName>
+             </ns2:contactPerson>
+             <ns2:contactEMail>ivan123@gmail.com</ns2:contactEMail>
+             <ns2:contactPhone>8-915-2468573</ns2:contactPhone>
+             <ns2:contactFax>8-488-1549687-77</ns2:contactFax>
+              <ns2:addInfo>c 9 до 19</ns2:addInfo>
+          </ns2:responsibleInfo>
+          <ns2:specializedOrg>
+            <ns2:regNum>03495000004</ns2:regNum>
+             <ns2:fullName>Новая тестовая электронная площадка 2</ns2:fullName>
+             <ns2:postAddress>
+ 117418, Москва Город, Цюрупы Улица, дом 11, офис (квартира) 5
+ </ns2:postAddress>
+             <ns2:factAddress>
+ Российская Федерация, 183025, Мурманская обл, Мурманск г, УЛ КАРЛА МАРКСА, 25/А
+ </ns2:factAddress>
+             <ns2:INN>8090101142</ns2:INN>
+             <ns2:KPP>819001142</ns2:KPP>
+          </ns2:specializedOrg>
+       </ns2:purchaseResponsible>
+      <ns2:placingWay>
+         <ns2:code>EAP44</ns2:code>
+         <ns2:name>Электронный аукцион</ns2:name>
+      </ns2:placingWay>
+      <ns2:contractConclusionOnSt83Ch2>true</ns2:contractConclusionOnSt83Ch2>
+      <ns2:ETP>
+         <ns2:code>ETP_GPB</ns2:code>
+         <ns2:name>ЭТП Газпромбанк</ns2:name>
+         <ns2:url>http://etp.gpb.ru/</ns2:url>
+      </ns2:ETP>
+      <ns2:procedureInfo>
+         <ns2:collecting>
+            <ns2:startDate>2019-07-10T14:46:00+03:00</ns2:startDate>
+            <ns2:place>Заявка подается оператору электронной площадки в порядке, определенном оператором электронной площадки, информация о котором размещена по адресу: https://etpgpb.ru/ (ЭТП Газпромбанк).</ns2:place>
+            <ns2:order>Подача заявок на участие в электронном аукционе осуществляется только лицами, зарегистрированными в единой информационной системе и аккредитованными на электронной площадке. Заявка на участие в электронном аукционе направляется участником аукциона оператору электронной площадки в форме двух электронных документов, содержащих части заявки, предусмотренные частями 3 и 5 статьи 66 Федерального закона от 05.04.2013 г. № 44-ФЗ. Указанные электронные документы подаются одновременно.</ns2:order>
+            <ns2:endDate>2020-07-30T14:00:01+03:00</ns2:endDate>
+         </ns2:collecting>
+         <ns2:scoring>
+            <ns2:date>2020-08-05T14:00:01+03:00</ns2:date>
+         </ns2:scoring>
+         <ns2:bidding>
+            <ns2:date>2019-08-10T14:00:01+03:00</ns2:date>
+            <ns2:addInfo />
+         </ns2:bidding>
+      </ns2:procedureInfo>
+      <ns2:lot>
+         <ns2:maxPrice>100000</ns2:maxPrice>
+         <ns2:currency>
+            <ns2:code>RUB</ns2:code>
+            <ns2:name>Российский рубль</ns2:name>
+         </ns2:currency>
+         <ns2:financeSource>Федеральный бюджет</ns2:financeSource>
+         <ns2:quantityUndefined>false</ns2:quantityUndefined>
+         <ns2:customerRequirements>
+            <ns2:customerRequirement>
+               <ns2:customer>
+                  <ns2:regNum>03737777629</ns2:regNum>
+                  <ns2:fullName>ООО ДомСтрой</ns2:fullName>
+               </ns2:customer>
+               <ns2:maxPrice>100000</ns2:maxPrice>
+               <ns2:kladrPlaces>
+                  <ns2:kladrPlace>
+                     <ns2:deliveryPlace>Российская Федерация, Краснодарский край, г. Сочи, ул. Новороссийское шоссе, 2</ns2:deliveryPlace>
+                  </ns2:kladrPlace>
+               </ns2:kladrPlaces>
+               <ns2:deliveryTerm>одной партией, с 17 июня 2019 года по 20 июня 2019 года</ns2:deliveryTerm>
+               <ns2:purchaseCode>192809010114281900114200000004511300</ns2:purchaseCode>
+               <ns2:purchaseObjectDescription>Описание объекта закупки</ns2:purchaseObjectDescription>
+            </ns2:customerRequirement>
+         </ns2:customerRequirements>
+         <ns2:purchaseObjects>
+            <ns2:purchaseObject>
+               <ns2:KTRU>
+                  <ns2:code>15.20.13.190</ns2:code>
+                  <ns2:name>15.20.13.190: Обувь прочая с верхом из кожи, кроме обуви спортивной, обуви с защитным металлическим подноском и различной специальной обуви</ns2:name>
+                  <ns2:characteristics>
+                     <ns2:characteristicsUsingTextForm>
+                        <ns2:name>Наименование характеристики</ns2:name>
+                        <ns2:type>2</ns2:type>
+                        <ns2:values>
+                           <ns2:value>
+                              <ns2:qualityDescription>Значение характеристики</ns2:qualityDescription>
+                           </ns2:value>
+                        </ns2:values>
+                     </ns2:characteristicsUsingTextForm>
+                     <ns2:addCharacteristicInfoReason>Обоснование включения дополнительной информации в сведения о товаре, работе, услуге*</ns2:addCharacteristicInfoReason>
+                  </ns2:characteristics>
+               </ns2:KTRU>
+               <ns2:name>15.20.13.190: Обувь прочая с верхом из кожи, кроме обуви спортивной, обуви с защитным металлическим подноском и различной специальной обуви</ns2:name>
+               <ns2:OKEI>
+                  <ns2:code>166</ns2:code>
+                  <ns2:nationalCode>КГ</ns2:nationalCode>
+                  <ns2:fullName>Пара</ns2:fullName>
+               </ns2:OKEI>
+               <ns2:price>6000</ns2:price>
+               <ns2:quantity>
+                  <ns2:value>10</ns2:value>
+               </ns2:quantity>
+               <ns2:sum>60000</ns2:sum>
+            </ns2:purchaseObject>
+            <ns2:purchaseObject>
+               <ns2:OKPD2>
+                  <ns2:code>15.20.13.190</ns2:code>
+                  <ns2:name>Бахилы</ns2:name>
+                  <ns2:addCharacteristics>Функциональные, технические, качественные, эксплуатационные характеристики</ns2:addCharacteristics>
+               </ns2:OKPD2>
+               <ns2:name>Бахилы</ns2:name>
+               <ns2:OKEI>
+                  <ns2:code>305</ns2:code>
+                  <ns2:nationalCode>КИ</ns2:nationalCode>
+                  <ns2:fullName>ШТ</ns2:fullName>
+               </ns2:OKEI>
+               <ns2:price>10000</ns2:price>
+               <ns2:quantity>
+                  <ns2:value>4</ns2:value>
+               </ns2:quantity>
+               <ns2:sum>40000</ns2:sum>
+            </ns2:purchaseObject>
+            <ns2:totalSum>100000</ns2:totalSum>
+         </ns2:purchaseObjects>
+         <ns2:preferenses>
+            <ns2:preferense>
+               <ns2:shortName>MP44</ns2:shortName>
+               <ns2:name>Субъектам малого предпринимательства, социально ориентированным некоммерческим организациям</ns2:name>
+            </ns2:preferense>
+            <ns2:preferense>
+               <ns2:shortName>RBK126</ns2:shortName>
+               <ns2:name>Участникам, заявки или окончательные предложения которых содержат предложения о поставке товаров в соответствии с приказом Минфина России № 126н от 04.06.2018</ns2:name>
+               <ns2:prefValue>15.0</ns2:prefValue>
+            </ns2:preferense>
+            <ns2:preferense>
+               <ns2:shortName>IN44</ns2:shortName>
+               <ns2:name>Организациям инвалидов (в соответствии со статьей 29 Федерального закона № 44-ФЗ)</ns2:name>
+               <ns2:prefValue>15.0</ns2:prefValue>
+            </ns2:preferense>
+            <ns2:preferense>
+               <ns2:shortName>UG44</ns2:shortName>
+               <ns2:name>Учреждениям и предприятиям уголовно-исполнительной системы (в соответствии со статьей 28 Федерального закона № 44-ФЗ)</ns2:name>
+               <ns2:prefValue>15.0</ns2:prefValue>
+            </ns2:preferense>
+         </ns2:preferenses>
+         <ns2:requirements>
+            <ns2:requirement>
+               <ns2:shortName>ET44</ns2:shortName>
+               <ns2:name>Единые требования к участникам (в соответствии с частью 1 Статьи 31 Федерального закона № 44-ФЗ)</ns2:name>
+            </ns2:requirement>
+            <ns2:requirement>
+               <ns2:shortName>TF44</ns2:shortName>
+               <ns2:name>Требование к наличию финансовых ресурсов для исполнения контракта (в соответствии с пунктом 1 части 2 статьи 31 Федерального закона № 44-ФЗ)</ns2:name>
+            </ns2:requirement>
+            <ns2:requirement>
+               <ns2:shortName>TS44</ns2:shortName>
+               <ns2:name>Требование к наличию на праве собственности или ином законном основании оборудования и других материальных ресурсов для исполнения контракта (в соответствии с пунктом 2 части 2 статьи 31 Федерального закона № 44-ФЗ)</ns2:name>
+            </ns2:requirement>
+            <ns2:requirement>
+               <ns2:shortName>TO44</ns2:shortName>
+               <ns2:name>Требование к наличию опыта работы, связанного с предметом контракта, и деловой репутации (в соответствии с пунктом 3 части 2 статьи 31 Федерального закона № 44-ФЗ)</ns2:name>
+            </ns2:requirement>
+            <ns2:requirement>
+               <ns2:shortName>TK44</ns2:shortName>
+               <ns2:name>Требование к наличию необходимого количества специалистов и иных работников определенного уровня квалификации для исполнения контракта (в соответствии с пунктом 4 части 2 статьи 31 Федерального закона № 44-ФЗ)</ns2:name>
+            </ns2:requirement>
+            <ns2:requirement>
+               <ns2:shortName>ET44312</ns2:shortName>
+               <ns2:name>Требования к участникам закупок в соответствии с частью 2.1 статьи 31 Федерального закона № 44-ФЗ</ns2:name>
+            </ns2:requirement>
+            <ns2:requirement>
+               <ns2:shortName>GOZ1</ns2:shortName>
+               <ns2:name>Наличие на праве собственности или на ином законном основании производственных мощностей и технологического оборудования для исполнения государственного контракта (часть 1 ПП РФ № 1482 от 25.02.2014 г.)</ns2:name>
+            </ns2:requirement>
+            <ns2:requirement>
+               <ns2:shortName>GOZ2</ns2:shortName>
+               <ns2:name>Финансовая устойчивость и платежеспособность (часть 1 ПП РФ № 1482 от 25.02.2014 г.)</ns2:name>
+            </ns2:requirement>
+            <ns2:requirement>
+               <ns2:shortName>GOZ3</ns2:shortName>
+               <ns2:name>Наличие специалистов, имеющих профессиональное образование, отвечающих соответствующим квалификационным требованиям, заключивших с участником размещения государственного оборонного заказа трудовые договоры, необходимых в соответствии с документацией о закупке для исполнения государственного контракта (часть 1 ПП РФ № 1482 от 25.02.2014 г.)</ns2:name>
+            </ns2:requirement>
+         </ns2:requirements>
+         <ns2:restrictions>
+            <ns2:restriction>
+               <ns2:shortName>JB2149</ns2:shortName>
+               <ns2:name>Запрет на допуск товаров, услуг при осуществлении закупок, а также ограничения и условия допуска в соответствии с требованиями, установленными статьей 14 Федерального закона № 44-ФЗ</ns2:name>
+               <ns2:restrictionsSt14>
+                  <ns6:restrictionSt14>
+                     <ns6:requirementsType>
+                        <ns6:requirementType>
+                           <ns6:type>RA</ns6:type>
+                        </ns6:requirementType>
+                     </ns6:requirementsType>
+                     <ns6:NPAInfo>
+                        <ns4:code>27</ns4:code>
+                        <ns4:name>Постановление Правительства РФ от 20 сентября 2018г. N 1119 "Об ограничениях допуска оружия спортивного огнестрельного с нарезным стволом, патронов и боеприпасов прочих и их деталей, происходящих из иностранных государств, для целей осуществления закупок для обеспечения государственных и муниципальных нужд"</ns4:name>
+                        <ns4:shortName>N 1119 от 20.09.2018г.</ns4:shortName>
+                     </ns6:NPAInfo>
+                     <ns6:exception>
+                        <ns6:imposibilityBan>true</ns6:imposibilityBan>
+                        <ns6:imposibilityBanReason>Обоснование невозможности запрета, ограничения допуска</ns6:imposibilityBanReason>
+                     </ns6:exception>
+                     <ns6:note>Примечание</ns6:note>
+                  </ns6:restrictionSt14>
+                  <ns6:restrictionSt14>
+                     <ns6:requirementsType>
+                        <ns6:requirementType>
+                           <ns6:type>AC</ns6:type>
+                        </ns6:requirementType>
+                     </ns6:requirementsType>
+                     <ns6:NPAInfo>
+                        <ns4:code>1</ns4:code>
+                        <ns4:name>Приказ Минфина России от 04.06.2018г. N 126н "Об условиях допуска товаров, происходящих из иностранного государства или группы иностранных государств, для целей осуществления закупок товаров для обеспечения государственных и муниципальных нужд"</ns4:name>
+                        <ns4:shortName>N 126н от 04.06.2018г.</ns4:shortName>
+                     </ns6:NPAInfo>
+                  </ns6:restrictionSt14>
+               </ns2:restrictionsSt14>
+            </ns2:restriction>
+            <ns2:restriction>
+               <ns2:shortName>MB44330</ns2:shortName>
+               <ns2:name>Закупка у субъектов малого предпринимательства и социально ориентированных некоммерческих организаций</ns2:name>
+            </ns2:restriction>
+         </ns2:restrictions>
+         <ns2:mustPublicDiscussion>false</ns2:mustPublicDiscussion>
+      </ns2:lot>
+      <ns2:attachments>
+         <ns2:attachment>
+            <ns2:publishedContentId>7FA2BBB86085487DE053171F860A1123</ns2:publishedContentId>
+            <ns2:fileName>Tестовый документ.txt</ns2:fileName>
+            <ns2:fileSize>30 байт</ns2:fileSize>
+            <ns2:docDescription>Tестовый документ</ns2:docDescription>
+            <ns2:url>http://eis5.roskazna.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=7FA2BBB86085487DE053171F860A1123</ns2:url>
+            <ns2:cryptoSigns>
+               <ns2:signature type="CAdES-BES">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</ns2:signature>
+            </ns2:cryptoSigns>
+         </ns2:attachment>
+      </ns2:attachments>
+      <ns2:documentation>
+         <ns2:purchaseObjectsCh9St37>false</ns2:purchaseObjectsCh9St37>
+         <ns2:modifiable>false</ns2:modifiable>
+         <ns2:clarificationInfo>
+            <ns2:startDate>2020-02-04T10:00:01+03:00</ns2:startDate>
+            <ns2:endDate>2020-02-04T12:30:01+03:00</ns2:endDate>
+            <ns2:deliveryProcedure>По будням</ns2:deliveryProcedure>
+         </ns2:clarificationInfo>
+         <ns2:onesideRejectionCh9St95>false</ns2:onesideRejectionCh9St95>
+         <ns2:printFormInfo>
+            <ns6:url>http://eis5.roskazna.ru/epz/order/notice/printForm/viewXml.html?noticeId=56187</ns6:url>
+            <ns6:signature type="CAdES-BES">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</ns6:signature>
+         </ns2:printFormInfo>
+      </ns2:documentation>
+   </data>
+</fcsNotificationEF>
