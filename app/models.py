@@ -6,7 +6,6 @@ class T_Users(models.Model):
         max_length=100,
         unique=True,
         verbose_name='Куратор'
-        # default='Не назначено'
     )
 
     class Meta:
@@ -30,7 +29,8 @@ class T_Procedures(models.Model):
     curator = models.ForeignKey(
         T_Users,
         on_delete=models.SET_NULL,
-        null=True
+        null=True,
+        blank=True
     )
     xml_type = models.CharField(
         max_length=100,
