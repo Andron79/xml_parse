@@ -47,4 +47,4 @@ class T_Procedures(models.Model):
         ordering = ('id',)
 
     def __str__(self):
-        return str(self.purchaseNumber)
+        return str(self.curator)
