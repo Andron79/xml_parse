@@ -5,11 +5,6 @@ from app.forms import T_ProceduresForm
 from app.models import T_Procedures
 
 
-class IndexView(TemplateView):
-    template_name = 'dashboard.html'
-    model = T_Procedures
-
-
 class T_ProceduresView(FormView):
     form_class = T_ProceduresForm
     template_name = 'dashboard.html'
