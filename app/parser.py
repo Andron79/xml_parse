@@ -1,8 +1,5 @@
 import os
 import xml.etree.cElementTree as ET
-from datetime import datetime
-from pprint import pprint
-
 from parse.settings import XML_FILE_PATH, XML_FIELDS
 
 key_set = XML_FIELDS
@@ -26,32 +23,18 @@ def parse_xml_data_to_dict(xml_file):
     return xml_data_dict
 
 
-def main():
-    # parse_xml_data_list = [
-    #     parse_xml_data_to_dict(XML_FILE_PATH + file)
-    #     for file in file_list
-    #     if parse_xml_data_to_dict(XML_FILE_PATH + file)
-    # ]
-    # pprint(parse_xml_data_list)
-    # parse_xml_data_list = [
-    # parse_xml_data_to_dict(XML_FILE_PATH + file)
-    # xml_data_dict = parse_xml_data_to_dict(XML_FILE_PATH + file)
-    for file in file_list:
-        xml_data_dict = parse_xml_data_to_dict(XML_FILE_PATH + file)
+def parse_xml_data_to_list():
+    """
+    Получение списка словарей с распарсенными данными из xml файлов
+    :return: list
+    """
+    parse_xml_data_list = [
+        parse_xml_data_to_dict(XML_FILE_PATH + file) for file in file_list if
+        parse_xml_data_to_dict(XML_FILE_PATH + file)
+    ]
 
-        # if xml_data_dict:
-        #     T_Procedures.objects.created(
-        #         curator=T_Users.objects.get(curator_id=2),
-        #         xml_type=xml_data_dict['xml_type'],
-        #         purchaseNumber=int(xml_data_dict['purchaseNumber']),
-        #         docPublishDate=datetime.datetime.strptime(xml_data_dict['docPublishDate'], '%Y-%m-%d %H:%M:%S.%f'),
-        #         purchaseObjectInfo=xml_data_dict['purchaseObjectInfo'],
-        #         regNum=xml_data_dict['regNum'],
-        #         maxPrice=int(xml_data_dict['maxPrice'])
-        #     )
+    return parse_xml_data_list
 
-        pprint(xml_data_dict)
-
-
-if __name__ == '__main__':
-    main()
+#
+# if __name__ == '__main__':
+#     parse_xml_data_to_list()

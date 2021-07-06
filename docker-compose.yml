@@ -1,0 +1,35 @@
+version: "3.7"
+services:
+#  web:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+##    command: python manage.py runserver 0.0.0.0:8000
+#    volumes:
+#      - ./app/:/usr/src/app/
+#    command: /app/entrypoint.sh
+#    ports:
+#      - 8000:8000
+#    depends_on:
+#      - db
+#    restart: on-failure
+#    links:
+#      - db:db
+#    networks:
+#      - default
+  db:
+    image: postgres:13.1-alpine
+    environment:
+      POSTGRES_USER: postgres_user
+      POSTGRES_DB: postgres_db
+      POSTGRES_PORT: 5432
+      POSTGRES_PASSWORD: pass1234
+    networks:
+      - default
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    restart: always
+volumes:
+  postgres_data:

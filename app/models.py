@@ -35,10 +35,14 @@ class T_Procedures(models.Model):
     xml_type = models.CharField(
         max_length=100,
     )
-    purchaseNumber = models.IntegerField()
+    purchaseNumber = models.CharField(
+        max_length=100,
+    )
     docPublishDate = models.DateTimeField()
     purchaseObjectInfo = models.TextField(max_length=5000)
-    regNum = models.IntegerField()
+    regNum = models.CharField(
+        max_length=100,
+    )
     maxPrice = models.IntegerField()
 
     class Meta:
