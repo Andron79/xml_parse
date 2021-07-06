@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, FormView
+from django.views.generic import FormView
 
 from app.forms import T_ProceduresForm
 from app.models import T_Procedures
@@ -22,10 +22,11 @@ class T_ProceduresView(FormView):
         )
 
     def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST)
+        form = self.form_class(request.POST or None)
         if form.is_valid():
-            result_list = T_Procedures.objects.filter(curator__name__contains=form.cleaned_data['name'])
-            print(result_list)
+            result_list = T_Procedures.objects.filter(curator__name__contains=form.cleaned_data['curator'])
+        else:
+            result_list = T_Procedures.objects.filter(curator__isnull=False)
         return self.render_to_response(
             {
                 'result_list': result_list,

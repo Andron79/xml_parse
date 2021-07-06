@@ -4,12 +4,9 @@ from app.models import T_Procedures
 
 
 class T_ProceduresForm(forms.Form):
-    name = forms.ModelChoiceField(
+    curator = forms.ModelChoiceField(
         queryset=T_Procedures.objects.filter(curator__isnull=False),
+        widget=forms.Select(attrs={"onChange": 'submit()'}),
         empty_label='Все кураторы',
-        label='Имя'
+        label='Кураторы '
     )
-
-    # class Meta:
-    #     model = T_Users
-    #     # fields = ['name', ]

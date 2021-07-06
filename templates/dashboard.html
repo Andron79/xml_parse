@@ -29,42 +29,22 @@
             <span class="brand-text font-weight-light">AdminLTE 3</span>
         </a>
 
-        <!-- Sidebar -->
         <div class="sidebar">
-
-            <!-- Sidebar Menu -->
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                     data-accordion="false">
-                    <!-- Add icons to the links using the .nav-icon class
-                         with font-awesome or any other icon font library -->
                     <li class="nav-item menu-open">
-                        <a href="#" class="nav-link active">
+{#                        <a href="#" class="nav-link active">#}
                             <div>
-                                {#                                    <form id="form" action="" method="post">#}
-                                {#                                    {% csrf_token %}#}
-                                {#                                        <select onchange="if (this.selectedIndex) this.form.submit()">#}
-                                {#                                            <option >Выберите</option>#}
-                                {#                                            {% for item in form.name %}#}
-                                {#                                                <option value="{{ item }}">{{ item }}</option>#}
-                                {#                                             {% endfor %}#}
-                                {#                                        </select>#}
-                                {#                                    </form>#}
-                                <p>
-                                    Выбор куратора
-                                </p>
-                                <form id="id_name" action="" method="post">
+                                <form id="form" class="nav-link active" action="" method="post">
                                     {% csrf_token %}
-                                    {{ form }}
-                                    <input type="submit" value="Ок">
+                                    {{ form.curator }}
                                 </form>
                             </div>
-                        </a>
+{#                        </a>#}
                 </ul>
             </nav>
-            <!-- /.sidebar-menu -->
         </div>
-        <!-- /.sidebar -->
     </aside>
 
     <!-- Content Wrapper. Contains page content -->
@@ -90,41 +70,32 @@
                             <div class="card-header border-0">
                                 <div class="d-flex justify-content-between">
                                     <h3 class="card-title">График по процедурам</h3>
-                                    {#                                    <a href="javascript:void(0);">View Report</a>#}
                                 </div>
                             </div>
                             <div class="card-body">
                                 <span class="text-success">
 
                                     {% for item in result_list %}
+                                        <p>
                                         {{ item }}
+                                        </p>
                                     {% endfor %}
 
                                 </span>
                             </div>
 
-                            <!-- /.d-flex -->
-
                             <div class="position-relative mb-4">
-                                <canvas id="visitors-chart" height="400"></canvas>
+                                <canvas id="t_procedure-chart" height="200"></canvas>
                             </div>
-
-
 
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+                <!-- END Main content -->
     </div>
 </div>
-
-<!-- Control Sidebar -->
-<aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-</aside>
-<!-- /.control-sidebar -->
-
 
 
 <!-- REQUIRED SCRIPTS -->
@@ -144,6 +115,46 @@
 <script src="{% static 'dist/js/pages/dashboard3.js' %}"></script>
 </body>
 </html>
+
+<script>
+    var ctx = document.getElementById('t_procedure-chart');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', {{ result_list.count }}],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
 
 {#<script>#}
 {#    var start = new Date('{{ chart_date.year }}-{{ chart_date.month }}-{{ chart_date.day }}');#}
