@@ -34,7 +34,3 @@ def parse_xml_data_to_list():
     ]
 
     return parse_xml_data_list
-
-#
-# if __name__ == '__main__':
-#     parse_xml_data_to_list()

@@ -34,14 +34,14 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                     data-accordion="false">
                     <li class="nav-item menu-open">
-{#                        <a href="#" class="nav-link active">#}
-                            <div>
-                                <form id="form" class="nav-link active" action="" method="post">
-                                    {% csrf_token %}
-                                    {{ form.curator }}
-                                </form>
-                            </div>
-{#                        </a>#}
+
+                        <div>
+                            <form id="form" class="nav-link active" action="" method="post">
+                                {% csrf_token %}
+                                {{ form.curator }}
+                            </form>
+                        </div>
+
                 </ul>
             </nav>
         </div>
@@ -72,17 +72,6 @@
                                     <h3 class="card-title">График по процедурам</h3>
                                 </div>
                             </div>
-                            <div class="card-body">
-                                <span class="text-success">
-
-                                    {% for item in result_list %}
-                                        <p>
-                                        {{ item }}
-                                        </p>
-                                    {% endfor %}
-
-                                </span>
-                            </div>
 
                             <div class="position-relative mb-4">
                                 <canvas id="t_procedure-chart" height="200"></canvas>
@@ -93,7 +82,7 @@
                 </div>
             </div>
         </div>
-                <!-- END Main content -->
+        <!-- END Main content -->
     </div>
 </div>
 
@@ -117,229 +106,39 @@
 </html>
 
 <script>
+    var ticks =
+    {{ y_max_sum_list|safe }}
     var ctx = document.getElementById('t_procedure-chart');
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', {{ result_list.count }}],
+            labels: {{ x_date_list|safe }},
+            fill: false,
             datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
+                label: 'График линейный',
+                data: {{ data_set|safe }},
+                backgroundColor: '#8074a8',
+                borderColor: '#8074a8',
                 borderWidth: 1
             }]
         },
-
         options: {
             scales: {
-                y: {
-                    beginAtZero: true
-                }
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        autoSkip: false,
+                        min: ticks[ticks.length - 1],
+                        max: ticks[0]
+                    },
+                    afterBuildTicks: function (scale) {
+                        scale.ticks = ticks;
+                    },
+                    beforeUpdate: function (oScale) {
+                        return
+                    }
+                }]
             }
         }
     });
 </script>
-
-
-{#<script>#}
-{#    var start = new Date('{{ chart_date.year }}-{{ chart_date.month }}-{{ chart_date.day }}');#}
-{#    var end = new Date('{{ chart_date_end.year }}-{{ chart_date_end.month }}-{{ chart_date_end.day }}');#}
-{#    var ctx = document.getElementById('myChart{{acc.id}}lot').getContext('2d');#}
-{#    var myChart = new Chart(ctx, {#}
-{#        type: 'line',#}
-{#        data: {#}
-{#            labels: {{ label_data|safe }},#}
-{#            labels2: {{ label2|safe }},#}
-{#            labels1: {{ label1|safe }},#}
-{#            datasets: [#}
-{#                {#}
-{#                    label: 'Публикации, тыс. шт.',#}
-{#                    data: {{ acc|data_info:chart_dict|get_item:'published'}},#}
-{#                    borderWidth: 1,#}
-{#                    pointRadius: 3,#}
-{#                    borderColor: '#8074a8',#}
-{#                    backgroundColor: '#8074a8',#}
-{#                    fill: false,#}
-{#                },#}
-{#                {#}
-{#                    label: 'Завершено, тыс. шт.',#}
-{#                    data: {{ acc|data_info:chart_dict|get_item:'closed'}},#}
-{#                    borderWidth: 1,#}
-{#                    pointRadius: 3,#}
-{#                    borderColor: '#c46487',#}
-{#                    backgroundColor: '#c46487',#}
-{#                    fill: false,#}
-{#                },#}
-{#            ]#}
-{#        },#}
-{#        options: {#}
-{#            tooltips: {#}
-{#                mode: 'index',#}
-{#                intersect: true,#}
-{#                callbacks: {#}
-{#                    title: function (tooltipItems, data) {#}
-{#                        var title = '';#}
-{#                        var labels1 = data.labels1;#}
-{#                        var labels2 = data.labels2;#}
-{#                        var tooltipItem = tooltipItems[0];#}
-{#                        var st = '';#}
-{#                        /*if (tooltipItems.dataIndex === 0) {#}
-{#                            var datestr1 = '#}
-{##}
-{##}
-{##}
-{##}
-{##}
-{##}
-{##}
-{##}
-{#                        {{start_date|date:'d.m.Y'}}';#}
-{#                                    var datestr2 = labels[tooltipItems.dataIndex];#}
-{#                                } else {#}
-{#                                    var datestr1 = labels[tooltipItems.dataIndex];#}
-{#                                    var datestr2 = labels[tooltipItems.dataIndex + 1];#}
-{#                                }*/#}
-{#                        var datestr1 = labels1[tooltipItems[0].index];#}
-{#                        var datestr2 = labels2[tooltipItems[0].index + 1];#}
-{#                        {% if range != 'day' %}#}
-{#                            title = datestr1 + '-' + datestr2;#}
-{#                        {% else %}#}
-{#                            title = datestr2;#}
-{#                        {% endif %}#}
-{#                        return title;#}
-{#                    },#}
-{#                    label: function (tooltipItem, data) {#}
-{#                        var label = data.datasets[tooltipItem.datasetIndex].label || '';#}
-{##}
-{#                        if (label) {#}
-{#                            label += ': ';#}
-{#                        }#}
-{##}
-{#                        label = tooltipItem.yLabel;#}
-{#                        return label;#}
-{#                    }#}
-{#                }#}
-{#            },#}
-{#            scales: {#}
-{#                {% if show_nmb %}#}
-{#                    yAxes: [{#}
-{#                        gridLines: {#}
-{#                            drawOnChartArea: false,#}
-{#                            drawTicks: false,#}
-{#                        },#}
-{#                        ticks: {#}
-{#                            display: false#}
-{#                        },#}
-{#                    }],#}
-{#                {% else %}#}
-{#                    yAxes: [{#}
-{#                        ticks: {#}
-{#                            callback: function (value, index, values) {#}
-{#                                return thF(value);#}
-{#                            }#}
-{#                        },#}
-{#                    }],#}
-{#                {% endif %}#}
-{##}
-{##}
-{#xAxes: [{#}
-{#                    type: 'time',#}
-{#                    distribution: 'series',#}
-{#                    time: {#}
-{#                        unit: '{{range}}',#}
-{#                        parser: 'DD.MM.YY',#}
-{#                        min: start,#}
-{#                        max: end,#}
-{#                        displayFormats: {#}
-{#                            week: 'D.MMM',#}
-{#                            month: 'MMM YY',#}
-{#                        }#}
-{#                    },#}
-{#                    gridLines: {#}
-{#                        color: 'lightgray',#}
-{#                        zeroLineColor: 'lightgray',#}
-{#                        offsetGridLines: true,#}
-{#                    },#}
-{#                    ticks: {#}
-{#                        padding: 10,#}
-{#                    }#}
-{#                }],#}
-{#            },#}
-{##}
-{#            legend: {#}
-{#                display: true,#}
-{#                position: 'bottom',#}
-{#                align: 'center',#}
-{#                labels: {#}
-{#                    fontColor: 'black',#}
-{#                    fontSize: 10,#}
-{#                },#}
-{#            },#}
-{#            {% if show_nmb %}#}
-{#                plugins: {#}
-{#                    datalabels: {#}
-{#                        anchor: function (context) {#}
-{#                            if (context.chart.data.datasets[context.datasetIndex].data[context.dataIndex] < context.chart.data.datasets[Math.abs(context.datasetIndex - 1)].data[context.dataIndex]) {#}
-{#                                return 'start';#}
-{#                            } else {#}
-{#                                return 'end';#}
-{#                            }#}
-{#                        },#}
-{#                        align: function (context) {#}
-{#                            if (context.chart.data.datasets[context.datasetIndex].data[context.dataIndex] < context.chart.data.datasets[Math.abs(context.datasetIndex - 1)].data[context.dataIndex]) {#}
-{#                                return 'start';#}
-{#                            } else {#}
-{#                                return 'end';#}
-{#                            }#}
-{#                        },#}
-{#                        offset: -2,#}
-{#                        display: 'auto',#}
-{#                        color: function (context) {#}
-{#                            if (context.dataset.data[context.dataIndex] === 0) {#}
-{#                                return 'transparent';#}
-{#                            }#}
-{#                            return context.dataset.backgroundColor;#}
-{#                        },#}
-{##}
-{#                        font: {#}
-{#                            size: mob_font(8, 10),#}
-{#                        },#}
-{#                        formatter: function (value, context) {#}
-{#                            return spec_format(value, 1000, 2, 1, 0);#}
-{#                        },#}
-{#                    }#}
-{#                },#}
-{#            {% endif %}#}
-{#            layout: {#}
-{#                padding: {#}
-{#                    {% if show_nmb %}#}
-{#                        left: 20,#}
-{#                        right: 20,#}
-{#                        top: 30,#}
-{#                    {% else %}#}
-{#                        left: 5,#}
-{#                        right: 5,#}
-{#                        top: 5,#}
-{#                    {% endif %}#}
-{#                    bottom: 0#}
-{#                }#}
-{#            },#}
-{##}
-{#        }#}
-{#    });#}
-{#</script>#}
