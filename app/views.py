@@ -12,7 +12,7 @@ from app.parser import parse_xml_data_to_list
 class ParserView(TemplateView):
     model = T_Procedures
 
-    def get(self, request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):  # TODO bulk_create()
         for xml_data_dict in parse_xml_data_to_list():
             T_Procedures.objects.create(
                 xml_type=xml_data_dict['xml_type'],
@@ -25,8 +25,8 @@ class ParserView(TemplateView):
 
         return render(
             request,
-            'dashboard.html',)
-            # HttpResponse('All xml files parsed!!')
+            'dashboard.html', )
+        # HttpResponse('All xml files parsed!!')
 
 
 class T_ProceduresView(FormView):
