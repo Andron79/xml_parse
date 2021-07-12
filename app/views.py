@@ -23,10 +23,10 @@ class ParserView(TemplateView):
                 maxPrice=int(xml_data_dict['maxPrice'])
             )
 
-        return render(
-            request,
-            'dashboard.html', )
-        # HttpResponse('All xml files parsed!!')
+        # return render(
+        #     request,
+        #     'dashboard.html', )
+        return HttpResponse('All xml files parsed!!')
 
 
 class T_ProceduresView(FormView):
