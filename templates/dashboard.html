@@ -107,8 +107,7 @@
 </html>
 
 <script>
-    var ticks =
-    {{ y_max_sum_list|safe }}
+    var ticks = {{ y_max_sum_list|safe }}
     var ctx = document.getElementById('t_procedure-chart');
     var myChart = new Chart(ctx, {
         type: 'line',

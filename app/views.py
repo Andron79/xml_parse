@@ -1,5 +1,4 @@
 import datetime
-
 from django.db.models import Sum
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -22,10 +21,6 @@ class ParserView(TemplateView):
                 regNum=int(xml_data_dict['regNum']),
                 maxPrice=int(xml_data_dict['maxPrice'])
             )
-
-        # return render(
-        #     request,
-        #     'dashboard.html', )
         return HttpResponse('All xml files parsed!!')
 
 
@@ -55,7 +50,8 @@ class T_ProceduresView(FormView):
             qs = T_Procedures.objects.filter(
                 curator__name__contains=form.cleaned_data['curator']).order_by('docPublishDate')
         else:
-            qs = T_Procedures.objects.filter(curator__isnull=False).order_by('docPublishDate')
+            qs = T_Procedures.objects.filter(
+                curator__isnull=False).order_by('docPublishDate')
         y_max_sum_list, x_date_list = self.get_axios
         data_set = self.get_dataset(qs)
         return self.render_to_response(
@@ -72,14 +68,13 @@ class T_ProceduresView(FormView):
         qs = T_Procedures.objects.all()
         x_date_list = [str(item.docPublishDate)[:10] for item in qs]
         x_date_list.sort()
-        y_max_sum_list = []
+        y_max_sum_list = set()
         for date in qs:
-            y_max_sum_list.append(
-                T_Procedures.objects.order_by('docPublishDate').filter(docPublishDate=date.docPublishDate).aggregate(
-                    max_sum_date=(Sum('maxPrice')))['max_sum_date'])
-        y_max_sum_list = set(y_max_sum_list)
-        y_max_sum_list = list(y_max_sum_list)
-        y_max_sum_list.sort()
+            y_max_sum_list.add(
+                T_Procedures.objects.order_by('docPublishDate').filter(
+                    docPublishDate=date.docPublishDate).aggregate(max_sum_date=(Sum('maxPrice')))['max_sum_date']
+            )
+        y_max_sum_list = sorted(list(y_max_sum_list))
         return y_max_sum_list, x_date_list
 
     @staticmethod
